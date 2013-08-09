@@ -1,0 +1,6 @@
+Aihekuvaus
+
+Toteutetaan php+mysql käyttäen muistilista, jonka päätavoitteena on näyttää muistioon tallennetut asiat loogisessa järjestyksessä esim. tärkeysasteen / päivämäärän (?) mukaan.
+Järjestelmään täytyy kuitenkin ensin rekisteröityä (username+password) ja kirjautua sisään. Vasta sitten pääsee käyttämään muistilistaa tai edes näkemään pääsivun. Järjestelmästä voi kirjautua ulos. Listaan voi lisätä eri tärkeysasteen sisältäviä asioita ja luokitella niitä itse-luotuihin luokkiin. Tarkoituksena olisi myös, että muistiossa olevia tietoja, tai ainakin osaa niistä voisi muokata ja poistaa.
+
+Muistilista ei vaadi esim javascript tukea. Se toteutetaan toimimaan verkkossa Apache webserverillä. Vaikka siinä käytetäänkin mysql tietokantaa, ei ole mitään painavaa syytä miksei muukin tietokanta kelpaisi pienillä muutoksilla.
