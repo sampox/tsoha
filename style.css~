@@ -13,14 +13,6 @@
 	width:330px;
 }
 .user {
-	padding: 5px 0px 0px 10px;
-	text-align:left;
-}
-.linkz {
-	padding: 5px 0px 0px 10px;
-	text-align:left;	
-}
-.notes {
-	padding: 5px 0px 0px 10px;
+	padding: 5px 0px 10px;
 	text-align:left;
 }

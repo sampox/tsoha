@@ -9,7 +9,7 @@
 	<input type="text" id="regname" name="regname" placeholder="Username">
 	<input type="password" id="regpass" name="regpass" placeholder="Password">
 <input type="password" id="regpass2" name="regpass2" placeholder="Repeat password">
-	<input type="submit" id="register" value="Register">
+<br />	<input type="submit" id="register" value="Register">
 </form>
 </div>
 </html>						
