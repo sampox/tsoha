@@ -5,6 +5,17 @@ require_once("isloggedin.php");
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
+<script>
+function validateForm()
+{
+var a=document.forms["addclass"]["classname"].value;
+if (a==null || a=="")
+  {
+  alert("The class must have a name.");
+  return false;
+  }
+}
+</script>
 </head>
 <div class=logout>
 <a href="logout.php"><b> Log Out</b></a>
@@ -22,7 +33,7 @@ require_once("isloggedin.php");
 
 <div class="logreg"> 
 <h2><br />Add a class<br /><br /></h2>
-<form name="addclass" action="add_class.php" method="post">
+<form name="addclass" action="add_class.php" onsubmit="return validateForm()" method="post">
 	<input type="text" id="classname" name="classname" placeholder="Classname" >
 <br />  <input type="submit" value="Add class">
 </form>
