@@ -1,4 +1,5 @@
 <?php
+header('Content-type: text/html; charset=utf-8');
 require_once("isloggedin.php");
 ?>
 
@@ -9,6 +10,14 @@ require_once("isloggedin.php");
 <script>
 function validateForm()
 {
+var a=document.forms["noteform"]["clas"].value;
+if (a==null || a=="")
+  {
+  alert("The note must have a class! If you have no classes yet, add one now.");
+  return false;
+  }
+
+
 var x=document.forms["noteform"]["notename"].value;
 if (x==null || x=="")
   {
@@ -34,16 +43,30 @@ if((document.forms["noteform"]["subclass"].value ).length > 65) {alert("Subclass
 
 </head>
 <body>
+<div class=logout>
+<a href="logout.php"><b> Log Out</b></a>
+</div>
+<div class=user>
+<p> Logged in as: <b><?php echo ''.$_SESSION['user'].''; ?></b> </p>
+</div>
+<div class=linkz>
+<a href="index.php" style="padding-right:20px;"> <b> Main page </b> </a>
+<a href="addnote.php" style="padding-right:20px;"> <b>Add a new note</b> </a>
+<a href="modnote.php" style="padding-right:20px;"> <b> Modify a note </b> </a>
+<a href="addclass.php" style="padding-right:20px;"> <b>Add a new class</b> </a>
+<a href="delclass.php"> <b>Remove a class</b> </a>
+</div>
+
 <div class=logreg>
 <h2><br />Add a note<br /><br /></h2>
 
-<form name="noteform" action="new_note.php" onsubmit="return validateForm()" method="post">
+<form name="noteform" action="add_note.php" onsubmit="return validateForm()" method="post">
         Note class:
 <?php
 include("users_classes.php");
 echo selectClasses($_SESSION['user']);
 ?>
-<input type="hidden" name="userna" value=<?php echo ''.$_SESSION['user'].'';?>>
+<br />
 <input type="text" id="notename" name="notename" placeholder="Name of the note">
 <input type="text" id="subclass" name="subclass" placeholder="Subclass name (optional)">
 <input type="text" id="description" name="description" placeholder="Description (optional)">
@@ -51,7 +74,8 @@ echo selectClasses($_SESSION['user']);
 <br />
         <input type="submit" value="Create note">
 </form>
-
+<br />
+<h3>No classes? <a href="addclass.php">Add a class now!</a></h3>
 </div>
 </body>
 </html>

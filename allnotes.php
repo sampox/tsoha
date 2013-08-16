@@ -1,4 +1,5 @@
-<?php
+/*<?php
+header('Content-type: text/html; charset=utf-8');
 require_once("isloggedin.php");
 
 function getNotes($user) {
@@ -24,3 +25,4 @@ while ($row = $sql->fetch()) {
 
 ?>
 
+*/

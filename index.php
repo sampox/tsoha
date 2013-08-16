@@ -1,4 +1,5 @@
 <?php
+header('Content-type: text/html; charset=utf-8');
 require_once("isloggedin.php");
 ?>
 <html>
@@ -14,6 +15,7 @@ require_once("isloggedin.php");
 <p> Logged in as: <b><?php echo ''.$_SESSION['user'].''; ?></b> </p>
 </div>
 <div class=linkz>
+<a href="index.php" style="padding-right:20px;"> <b> Main page </b> </a>
 <a href="addnote.php" style="padding-right:20px;"> <b>Add a new note</b> </a>
 <a href="modnote.php" style="padding-right:20px;"> <b> Modify a note </b> </a>
 <a href="addclass.php" style="padding-right:20px;"> <b>Add a new class</b> </a>
@@ -31,10 +33,10 @@ $sql->execute(array($userid));
 
 echo "<table border='3' cellpadding='2' cellspacing='2' width='80%'>";
     echo "<tr>";
-echo "<td> <b>Importance</b> </td>";
-    echo "<td> <b>Class</b> </td>";
-    echo  "<td> <b> Subclass</b> </td>";
-    echo "<td> <b>Note name</b> </td>";
+echo "<td width='12%'> <b>Importance</b> </td>";
+    echo "<td width='12%'> <b>Class</b> </td>";
+    echo  "<td width='12%'> <b> Subclass</b> </td>";
+    echo "<td width='16%'> <b>Note name</b> </td>";
     echo "<td><b> Description</b> </td>";
 
     echo  "</tr>";

@@ -1,4 +1,5 @@
 <?php
+header('Content-type: text/html; charset=utf-8');
 //CREATE A DB CONNECTION
 try {
     $dbconn = new PDO("mysql:host=localhost;dbname=test", "root", "nakki");

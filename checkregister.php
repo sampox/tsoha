@@ -4,6 +4,7 @@
 </head>
 <div class="succ">
 <?php
+header('Content-type: text/html; charset=utf-8');
 if($_POST['regname'] && $_POST['regpass'] && $_POST['regpass2'] )
 {
 if($_POST['regpass']==$_POST['regpass2'])

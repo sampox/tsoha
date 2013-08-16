@@ -1,4 +1,5 @@
 <?php
+header('Content-type: text/html; charset=utf-8');
 require_once("isloggedin.php");
 ?>
 
@@ -9,6 +10,22 @@ require_once("isloggedin.php");
 <script>
 function validateForm()
 {
+var a=document.forms["noteform"]["clas"].value;
+if (a==null || a=="")
+  {
+  alert("The note must have a class! If you have no classes yet, add one now.");
+  return false;
+  }
+
+
+var x=document.forms["noteform"]["notez"].value;
+if (x==null || x=="")
+  {
+  alert("The note must have a name");
+  return false;
+  }
+
+
 var y=document.forms["noteform"]["importance"].value;
 if (y==null || y=="") {}
 else 
@@ -26,6 +43,20 @@ if((document.forms["noteform"]["subclass"].value ).length > 65) {alert("Subclass
 
 </head>
 <body>
+<div class=logout>
+<a href="logout.php"><b> Log Out</b></a>
+</div>
+<div class=user>
+<p> Logged in as: <b><?php echo ''.$_SESSION['user'].''; ?></b> </p>
+</div>
+<div class=linkz>
+<a href="index.php" style="padding-right:20px;"> <b> Main page </b> </a>
+<a href="addnote.php" style="padding-right:20px;"> <b>Add a new note</b> </a>
+<a href="modnote.php" style="padding-right:20px;"> <b> Modify a note </b> </a>
+<a href="addclass.php" style="padding-right:20px;"> <b>Add a new class</b> </a>
+<a href="delclass.php"> <b>Remove a class</b> </a>
+</div>
+
 <div class=logreg>
 <h2><br />Modify a note<br /><br /></h2>
 
@@ -40,7 +71,7 @@ include("users_classes.php");
 echo selectClasses($_SESSION['user']);
 echo "<br />";
 ?>
-<input type="hidden" name="userna" value=<?php echo ''.$_SESSION['user'].'';?>>
+
 <input type="text" id="subclass" name="subclass" placeholder="Subclass name (optional)">
 <input type="text" id="description" name="description" placeholder="Description (optional)">
 <input type="text" id="importance" name="importance" placeholder="Importance (0-99) (optional)">

@@ -4,6 +4,7 @@
 </head>
 <div class="succ">
 <?php
+header('Content-type: text/html; charset=utf-8');
 
 include("dbconn.php"); //yhdistä mysql
 

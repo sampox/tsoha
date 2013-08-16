@@ -1,9 +1,10 @@
 <?php
+header('Content-type: text/html; charset=utf-8');
 require_once("isloggedin.php");
 
 include("dbconn.php");
 include("select_ids.php");
-$userid = guid($_POST['userna']);
+$userid = guid($_SESSION['user']);
 //katotaan löytyykö luokka jo databeissistä
    $sqll = $dbconn->prepare("SELECT * FROM classes WHERE classname=? AND user_id=?");
     $sqll->execute(array($_POST['classname'],$userid));
