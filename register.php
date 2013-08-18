@@ -23,16 +23,11 @@ if (x==null || x=="")
   }
 
 var z=document.forms["regform"]["regpass2"].value;
-if (z==null || z="")
-	{
-	alert("Remember to enter the password again!");
-	return false;
-}
-/*if(z!=x)
-	{
-	alert("Passwords do not match!");
-	return false;
-}*/
+if (z==null || z=="")
+  {
+  alert("Remember to enter the password again!");
+  return  false;
+  }
 }
 </script>
 </head>

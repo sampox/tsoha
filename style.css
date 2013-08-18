@@ -7,7 +7,7 @@
 .logout {
 	float:right;
 	text-align:right;
-	padding:5px 20px;
+	padding:5px 15px;
 }
 .succ {
 	width:330px;
@@ -15,12 +15,48 @@
 .user {
 	padding: 5px 0px 0px 10px;
 	text-align:left;
+	background:black;
+	color:red;
 }
 .linkz {
-	padding: 5px 0px 0px 10px;
-	text-align:center;	
+	padding: 5px 0px 10px 10px;
+	text-align:center;
+	background:black;
+	
 }
 .notes {
-	padding: 5px 0px 0px 10px;
 	text-align:center;
+	empty-cells:show;
+	
+}
+table
+{
+	margin-top:5px;
+	/*border-collapse:collapse;*/
+	border:solid grey 2px;
+}
+table td
+{
+	word-break:break-all;
+	table-layout:fixed;
+	text-align:center;
+	border:solid grey 1px;
+	max-width: 200px;
+  	overflow:hidden;
+   	text-overflow: ellipsis;
+    	white-space: nowrap;
+}
+td:hover {
+	overflow:visible;
+	white-space: normal;
+}
+.linkz a:link{color:white; }
+.linkz a:visited{color:white; }
+.linkz a:hover{color:grey;}
+.logout a:link{color:red;}
+.logout a:visited{color:red; }
+.logout a:hover{color:grey; }
+
+select {
+    width: 85px;
 }

@@ -1,10 +1,6 @@
-<?php
-header('Content-type: text/html; charset=utf-8');
-require_once("isloggedin.php");
-?>
-<html>
-<head>
-<link rel="stylesheet" href="style.css">
+<?php include("menu.php"); ?>
+
+<!-- BEGIN JAVASCRIPT -->
 <script>
 function validateForm()
 {
@@ -16,20 +12,7 @@ if (a==null || a=="")
   }
 }
 </script>
-</head>
-<div class=logout>
-<a href="logout.php"><b> Log Out</b></a>
-</div>
-<div class=user>
-<p> Logged in as: <b><?php echo ''.$_SESSION['user'].''; ?></b> </p>
-</div>
-<div class=linkz>
-<a href="index.php" style="padding-right:20px;"> <b> Main page </b> </a>
-<a href="addnote.php" style="padding-right:20px;"> <b>Add a new note</b> </a>
-<a href="modnote.php" style="padding-right:20px;"> <b> Modify a note </b> </a>
-<a href="addclass.php" style="padding-right:20px;"> <b>Add a new class</b> </a>
-<a href="delclass.php"> <b>Remove a class</b> </a>
-</div>
+<!-- END JAVASCRIPT -->
 
 <div class="logreg"> 
 <h2><br />Add a class<br /><br /></h2>
@@ -40,5 +23,6 @@ if (a==null || a=="")
 <br />
 <h3> Back to <a href="index.php"> main page </a> </h3>
 </div>
+</body>
 </html>
 

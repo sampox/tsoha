@@ -9,10 +9,10 @@ $sql->execute(array($user));
 $out = $sql->fetch();
 return $out['id'];
 }
-function clid($clas) {
+function clid($clas,$userid) {
 include ("dbconn.php");
-$sql = $dbconn->prepare("SELECT id FROM classes where classname= ?");
-$sql->execute(array($clas));
+$sql = $dbconn->prepare("SELECT id FROM classes where classname= ? and user_id=?");
+$sql->execute(array($clas,$userid));
 $out = $sql->fetch();
 return $out['id'];
 }
