@@ -1,6 +1,7 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
+<title> Memo </title>
 </head>
 <div class="succ">
 <?php

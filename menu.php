@@ -12,7 +12,7 @@ require_once("isloggedin.php");
 <a href="logout.php"><b> Log Out</b></a>
 </div>
 <div class=user>
-<p> Logged in as: <b><?php echo ''.$_SESSION['user'].''; ?></b> </p>
+<p>Welcome to Memo! Logged in as: <b><?php echo ''.$_SESSION['user'].''; ?></b> </p>
 </div>
 <div class=linkz>
 <a href="index.php" style="padding-right:20px;"><b>Main page</b></a>
