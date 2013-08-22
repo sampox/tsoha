@@ -62,6 +62,8 @@ Or delete it!
 <br />
 <input type="submit" name="delbutton" value="Delete note">
 </form>
+<br />
+<h3>No notes? <a href="addnote.php">Add a note now!</a></h3>
 
 </div>
 </body>
