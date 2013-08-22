@@ -24,7 +24,7 @@ if($sqll->rowCount()!=0) {
 else {
 $sql=$dbconn->prepare("insert into members (username,password) values(?,md5(?))");
 $sql->execute(array($regname,$_POST['regpass']));
-echo "<h4><br />you have registered successfully with the username: <font color='red'>$regname</font></h4>";
+echo "<h4><br />you have registered successfully with the username: <font color='red'>".htmlspecialchars($regname)."</font></h4>";
 
 echo "<a href='login.php'>go to login page</a>";
 return;

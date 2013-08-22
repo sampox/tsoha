@@ -5,7 +5,7 @@
 function validateForm()
 {
 var a=document.forms["noteform"]["clas"].value;
-if (a==null || a=="")
+if (a==null || a.trim()=="")
   {
   alert("The note must have a class! If you have no classes yet, add one now.");
   return false;
@@ -13,7 +13,7 @@ if (a==null || a=="")
 
 
 var x=document.forms["noteform"]["notez"].value;
-if (x==null || x=="")
+if (x==null || x.trim()=="")
   {
   alert("The note must have a name");
   return false;
@@ -21,7 +21,7 @@ if (x==null || x=="")
 
 
 var y=document.forms["noteform"]["importance"].value;
-if (y==null || y=="") {}
+if (y==null || y.trim()=="") {}
 else 
 {
         if (isNaN(y) || y < 0 || y > 99)

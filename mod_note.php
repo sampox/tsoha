@@ -1,20 +1,28 @@
+
 <?php
 header('Content-type: text/html; charset=utf-8');
 require_once("isloggedin.php");
 
 include("dbconn.php");
-include("select_ids.php");
-$noteid =$_POST['notez'];
-$classid = $_POST['clas'];
+include("sanity_checks.php");
+//REMOVE WHITESPACE FROM BEFORE AND AFTER VARIABLES
+$noteid =trim($_POST['notez']);
+$classid = trim($_POST['clas']);
+$importance = trim($_POST['importance']);
+$subclass = trim($_POST['subclass']);
+$description = trim($_POST['description']);
+
+$note_sanity=note_is_users($noteid,$_SESSION['userid']);
+$class_sanity=class_is_users($classid,$_SESSION['userid']);
 //CHECK INPUT
-if($classid == NULL || trim($classid)=='') { echo "The note must have a class!"; return; }
-else if($noteid == NULL || trim($noteid)=='') {echo "Must choose a note!"; return; }
-else if($_POST['importance'] != NULL || trim($_POST['importance'])!='') {
-        if($_POST['importance']<0 || $_POST['importance']>99) {echo "Importance must be between 0 and 99";return; }}
+if($classid == NULL || $classid=='' || !($class_sanity)) { echo "The note must have a class!"; return; }
+else if($noteid == NULL || $noteid=='' || !($note_sanity)) {echo "Must choose a note!"; return; }
+else if($importance != NULL || $importance!='') {
+        if($importance<0 || $importance>99) {echo "Importance must be between 0 and 99";return; }}
 //END CHECK
 if (isset($_POST['modbutton'])) {
 $sql = $dbconn->prepare("UPDATE notes SET class_id=?,subclass=IF(? = '', subclass, ?),description=IF(? = '', description, ?),importance=IF(?='' ,importance, ?) WHERE id=?");
-$sql->execute(array($classid,$_POST['subclass'],$_POST['subclass'], $_POST['description'],$_POST['description'], $_POST['importance'],$_POST['importance'],$noteid));
+$sql->execute(array($classid,$subclass,$subclass, $description,$description, $importance,$importance,$noteid));
 } 
 else if (isset($_POST['delbutton'])) {
 $sql = $dbconn->prepare("DELETE FROM notes WHERE id = ?");

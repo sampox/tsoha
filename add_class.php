@@ -3,9 +3,8 @@ header('Content-type: text/html; charset=utf-8');
 require_once("isloggedin.php");
 
 include("dbconn.php");
-include("select_ids.php");
-$userid = guid($_SESSION['user']);
-$classname=trim($_POST['classname']);
+$userid = $_SESSION['userid'];
+//$classname=trim($_POST['classname']);
 //CHECK INPUT
 if($classname == NULL || $classname=='') { echo "Must name the class!"; return; }
 //END CHECK

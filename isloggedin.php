@@ -2,7 +2,7 @@
 header('Content-type: text/html; charset=utf-8');
 session_start();
 
-if (!(isset($_SESSION['user']) && $_SESSION['user'] != '')) {
+if (!(isset($_SESSION['user']) && $_SESSION['user'] != '' && $_SESSION['user'] != NULL)) {
 
 header ("Location: login.php");
 

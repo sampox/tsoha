@@ -5,7 +5,7 @@
 function validateForm()
 {
 var a=document.forms["addclass"]["classname"].value;
-if (a==null || a=="")
+if (a==null || a.trim()=="")
   {
   alert("The class must have a name.");
   return false;

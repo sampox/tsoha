@@ -1,4 +1,5 @@
-<?php
+//REPLACED 
+/*<?php
 header('Content-type: text/html; charset=utf-8');
 require_once("isloggedin.php");
 
@@ -16,4 +17,4 @@ $sql->execute(array($clas,$userid));
 $out = $sql->fetch();
 return $out['id'];
 }
-?>
+?> */

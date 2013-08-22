@@ -8,7 +8,7 @@ header('Content-type: text/html; charset=utf-8');
 function validateForm()
 {
 var a=document.forms["regform"]["regname"].value;
-if (a==null || a=="")
+if (a==null || a.trim()=="")
   {
   alert("Enter a username to register!");
   return false;
