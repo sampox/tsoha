@@ -4,7 +4,7 @@ require_once("isloggedin.php");
 
 include("dbconn.php");
 $userid = $_SESSION['userid'];
-//$classname=trim($_POST['classname']);
+$classname=trim($_POST['classname']);
 //CHECK INPUT
 if($classname == NULL || $classname=='') { echo "Must name the class!"; return; }
 //END CHECK
