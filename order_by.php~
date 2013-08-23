@@ -1,19 +1,16 @@
 <?php
-require_once("logreg/is_logged_in.php"); //Onko käyttäjä kirjautunut
+require_once("logreg/is_logged_in.php");
 
 function getNotes($order) {
 echo "<div class=notes>";
 echo "<br /><h2>Notes ordered by $order:</h2><br />";
-
-include("orderby.php"); //Valikko jossa listataan järjestykset
-include("db_conn.php"); //DB yhteys
+include("orderby.php");
+include("db_conn.php");
 $userid = $_SESSION['userid'];
-
-// !!!HUOM!!! PDO:n lauseissa ei voi käyttää '?' ORDER BY-kanssa (haulla tulee vääriä tuloksia), ja muuttuja $order ei tule käyttäjän syötteenä vaan suoraan koodista, joten $order php muuttujan käyttö tässä SELECT lauseessa on turvallista.
+// !!!HUOM!!! PDO:n lauseissa ei voi käyttää '?' ORDER BY-kanssa (haulla tulee vääriä tuloksia), ja muuttuja $order ei tule käyttäjän syötteenä vaan suoraan koodista, joten php muuttujan käyttö tässä SELECT lauseessa on turvallista.
 $sql = $dbconn->prepare("SELECT DISTINCT importance,classname,subclass,name,description from notes,classes where notes.user_id=? AND notes.class_id=classes.id ORDER BY $order");
 $sql->execute(array($userid));
 
-//Luodaan html taulukko johon merkinnät laitetaan haetussa järjestyksessä
 echo "<table border='3' cellpadding='2' cellspacing='0'>";
     echo "<tr>";
 echo "<td> <b>Importance</b> </td>";
@@ -25,7 +22,7 @@ echo "<td> <b>Importance</b> </td>";
     echo  "</tr>";
 
 
-//Haetaan merkinnät html taulukkoon rivi kerrallaan
+
 while ($row = $sql->fetch()) {
     echo "<tr>";
 echo "<td>" . htmlspecialchars($row["importance"]) . "</td>";

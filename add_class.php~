@@ -3,13 +3,12 @@ header('Content-type: text/html; charset=utf-8');
 
 require_once("logreg/is_logged_in.php"); //Onko käyttäjä kirjautunut sisään
 
-include("db_conn.php"); //DB yhteys
+include("dbconn.php"); //DB yhteys
 $userid = $_SESSION['userid'];
 $classname=trim($_POST['classname']);
-//CHECK USER INPUT
+//CHECK INPUT
 if($classname == NULL || $classname=='') { echo "Must name the class!"; return; }
 //END CHECK
-
 //katotaan löytyykö luokka jo databeissistä
    $sqll = $dbconn->prepare("SELECT * FROM classes WHERE classname=? AND user_id=?");
     $sqll->execute(array($classname,$userid));

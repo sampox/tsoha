@@ -1,8 +1,8 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
-//CREATE A DB CONNECTION
+//Luodaan DB yhteys PDO:lla
 try {
-    $dbconn = new PDO("mysql:host=localhost;dbname=test", "root", "nakki");
+    $dbconn = new PDO("mysql:host=localhost;dbname=test", "root", "nakki"); //syötteinä Hostname, tietokannan nimi, käyttätunnus ja salasana
 } catch (PDOException $e) {
     die("ERROR: " . $e->getMessage());
 }

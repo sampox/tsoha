@@ -6,7 +6,7 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
 
-include("../dbconn.php"); //yhdistä mysql
+include("../db_conn.php"); //yhdistä mysql
 
 $sql= $dbconn->prepare("SELECT id,username FROM members WHERE username=? and password=md5(?)");
 $sql->execute(array($_POST['myusername'],$_POST['mypassword']));

@@ -6,7 +6,7 @@ include("db_conn.php"); //DB yhteys
 include("sanity_checks.php"); //tarkistuksia ovatko syötteet järkeviä
 
 $noteid =trim($_POST['notez']);
-$note_sanity = note_is_users($noteid,$_SESSION['userid']); //Kuuluuko merkintä käyttäjälle
+$note_sanity = note_is_users($noteid,$_SESSION['userid']);
 //CHECK USER INPUT
 if($noteid == NULL || $noteid=='' || !($note_sanity)) { echo "ERROR, must choose a note!"; return; }
 //END CHECK

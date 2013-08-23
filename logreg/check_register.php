@@ -12,7 +12,7 @@ if($regname && $_POST['regpass'] && $_POST['regpass2'] )
 if($_POST['regpass']==$_POST['regpass2'])
 {
 
-include("../dbconn.php");
+include("../db_conn.php");
 
 //katotaan löytyykö username jo databeissistä
     $sqll = $dbconn->prepare("SELECT * FROM members WHERE username = ?");

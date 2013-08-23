@@ -44,11 +44,11 @@ if((document.forms["noteform"]["subclass"].value ).length > 65) {alert("Subclass
         Choose note:
 <?php
 include("users_notes.php");
-echo getNotes($_SESSION['user']);
+echo getNotes();
 echo "<br /> Note's class:&nbsp";
 
 include("users_classes.php");
-echo selectClasses($_SESSION['user']);
+echo selectClasses();
 echo "<br />";
 ?>
 
