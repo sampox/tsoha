@@ -3,7 +3,7 @@ header('Content-type: text/html; charset=utf-8');
 ?>
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 <title> Memo </title>
 <script>
 function validateForm()
@@ -35,7 +35,7 @@ if (z==null || z=="")
 <div class="logreg"> 
 <h2><br />Register<br /><br /></h2>
 
-<form name="regform" action="checkregister.php" onsubmit="return validateForm()" method="post">
+<form name="regform" action="check_register.php" onsubmit="return validateForm()" method="post">
 	<input type="text" id="regname" name="regname" placeholder="Username">
 	<input type="password" id="regpass" name="regpass" placeholder="Password">
 <input type="password" id="regpass2" name="regpass2" placeholder="Repeat password">

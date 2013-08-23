@@ -16,7 +16,7 @@ if (a==null || a.trim()=="")
 
 <div class="logreg"> 
 <h2><br />Add a class<br /><br /></h2>
-<form name="addclass" action="add_class.php" onsubmit="return validateForm()" method="post">
+<form name="addclass" action="controllers/add_class.php" onsubmit="return validateForm()" method="post">
 	<input type="text" id="classname" name="classname" placeholder="Classname" >
 <br />  <input type="submit" value="Add class">
 </form>

@@ -4,20 +4,21 @@
 .logreg {
 	width:300px;
 }
-.logout {
-	float:right;
-	text-align:right;
-	padding:5px 15px;
-}
+
 .succ {
 	width:330px;
 }
+
 .user {
-	padding: 5px 0px 0px 10px;
-	text-align:left;
+	padding: 5px 0px 5px 0px;
+	text-align:center;
 	background:black;
 	color:red;
 }
+.user a:link{color:grey; }
+.user a:visited{color:grey; }
+.user a:hover{color:white; }
+
 .linkz {
 	padding: 5px 0px 10px 10px;
 	text-align:center;
@@ -52,10 +53,7 @@ td:hover {
 }
 .linkz a:link{color:white; }
 .linkz a:visited{color:white; }
-.linkz a:hover{color:grey;}
-.logout a:link{color:red;}
-.logout a:visited{color:red; }
-.logout a:hover{color:grey; }
+.linkz a:hover{color:grey; }
 
 select {
     width: 85px;

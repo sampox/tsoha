@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
-require_once("isloggedin.php");
+require_once("logreg/isloggedin.php");
 ?>
 <html>
 <head>
@@ -8,11 +8,8 @@ require_once("isloggedin.php");
 <title> Memo </title>
 </head>
 <body>
-<div class=logout>
-<a href="logout.php"><b> Log Out</b></a>
-</div>
 <div class=user>
-<p>Welcome to Memo! Logged in as: <b><?php echo ''.$_SESSION['user'].''; ?></b> </p>
+<p>Welcome to Memo! Logged in as: <b><?php echo ''.$_SESSION['user'].''; ?></b> <a href="logreg/logout.php"> Log Out</a> </p>
 </div>
 <div class=linkz>
 <a href="index.php" style="padding-right:20px;"><b>Main page</b></a>

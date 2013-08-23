@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 <title> Memo </title>
 </head>
 <div class="succ">
@@ -12,7 +12,7 @@ if($regname && $_POST['regpass'] && $_POST['regpass2'] )
 if($_POST['regpass']==$_POST['regpass2'])
 {
 
-include("dbconn.php");
+include("../dbconn.php");
 
 //katotaan löytyykö username jo databeissistä
     $sqll = $dbconn->prepare("SELECT * FROM members WHERE username = ?");
