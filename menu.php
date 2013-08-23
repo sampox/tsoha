@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
-require_once("logreg/isloggedin.php");
+require_once("logreg/is_logged_in.php");
 ?>
 <html>
 <head>

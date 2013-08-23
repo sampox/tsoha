@@ -1,4 +1,6 @@
 <?php
+require_once("logreg/is_logged_in.php");
+
 function getNotes($order) {
 echo "<div class=notes>";
 echo "<br /><h2>Notes ordered by $order:</h2><br />";

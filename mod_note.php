@@ -1,7 +1,7 @@
 
 <?php
 header('Content-type: text/html; charset=utf-8');
-require_once("isloggedin.php");
+require_once("logreg/is_logged_in.php");
 
 include("dbconn.php");
 include("sanity_checks.php");

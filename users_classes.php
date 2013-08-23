@@ -1,5 +1,7 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
+require_once("logreg/is_logged_in.php");
+
 
 function selectClasses($user) {
 include("dbconn.php");

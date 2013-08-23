@@ -1,6 +1,6 @@
 <?php
 header('Content-type: text/html; charset=utf-8');
-require_once("isloggedin.php");
+require_once("logreg/is_logged_in.php");
 
 function class_is_users($classid,$userid) {
 include("dbconn.php");
