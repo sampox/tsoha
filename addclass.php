@@ -1,6 +1,7 @@
 <?php include("menu.php"); ?>
 
 <!-- BEGIN JAVASCRIPT -->
+<!-- tarkistetaan ovatko kentät tyhjiä tai syötteet liian pitkiä -->
 <script>
 function validateForm()
 {
@@ -10,6 +11,7 @@ if (a==null || a.trim()=="")
   alert("The class must have a name.");
   return false;
   }
+if(a.length > 65) { alert("Name too long, max length is 65");return false; }
 }
 </script>
 <!-- END JAVASCRIPT -->
