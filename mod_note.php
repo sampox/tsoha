@@ -17,12 +17,19 @@ $description = trim($_POST['description']);
 $note_sanity=note_is_users($noteid,$_SESSION['userid']); 
 $class_sanity=class_is_users($classid,$_SESSION['userid']);
 
-//CHECK INPUT
+//Ovatko syötteet sopivan mittaisia
+$string_lengths_ok=FALSE;
+if(string_length_check($subclass,65) && string_length_check($description,100) && string_length_check($importance,2)) { 
+$string_lengths_ok=TRUE; }
+
+//Tarkistetaan ovatko käyttäjän syötteet käyttökelpoisia
 if($classid == NULL || $classid=='' || !($class_sanity)) { echo "The note must have a class!"; return; }
 else if($noteid == NULL || $noteid=='' || !($note_sanity)) {echo "Must choose a note!"; return; }
 else if($importance != NULL || $importance!='') {
         if($importance<0 || $importance>99) {echo "Importance must be between 0 and 99";return; }}
-//END CHECK
+else if(!$string_lengths_ok) {
+	echo "Too long input into field(s). The limit is 65 characters for subclass, 100 for description and 2 for importance";return;
+}
 
 //Jos käyttäjä haluaa muokata merkintää
 if (isset($_POST['modbutton'])) {

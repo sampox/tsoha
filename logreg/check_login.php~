@@ -38,7 +38,7 @@ $_SESSION['userid']=htmlspecialchars($result["id"]);
 header("location:loginsuccess.php");
 }
 else {
-echo "<br />Invalid/unrecognized username or password, redirecting back to <a href='login.php'>login page</a> in 2 seconds";
+echo "<br />Invalid/unrecognized username or password, redirecting back to <a href='logreg/login.php'>login page</a> in 2 seconds";
 }
  
 ?>

@@ -45,7 +45,7 @@ if((document.forms["noteform"]["subclass"].value ).length > 65) {alert("Subclass
         Note class: &nbsp&nbsp
 <?php
 include("users_classes.php");
-echo selectClasses();
+echo selectClasses(); //käyttäjän luokat drop-down valikossa
 ?>
 <br />
 <input type="text" id="notename" name="notename" placeholder="Name of the note">
